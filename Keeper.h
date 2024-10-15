@@ -1,7 +1,3 @@
-//
-// Created by 89026 on 14.10.2024.
-//
-
 #ifndef TP1_KEEPER_H
 #define TP1_KEEPER_H
 
@@ -18,6 +14,9 @@ public:
     void displayFigures() const;
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
+    std::string returnType(int index);
+    void setSizeFlat(int index, double x, double y);
+    void setSizeVolume(int index, double x, double y, double z);
 
 private:
     std::vector<Figure*> figures;

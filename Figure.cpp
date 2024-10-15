@@ -8,7 +8,7 @@ Figure::Figure() {
     std::cout << "Figure default constructor called" << std::endl;
 }
 
-Figure::Figure(const std::string& type, double size) : type(type), size(size) {
+Figure::Figure(const std::string& type) : type(type) {
     std::cout << "Figure parameterized constructor called" << std::endl;
 }
 

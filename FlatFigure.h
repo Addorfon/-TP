@@ -1,7 +1,3 @@
-//
-// Created by 89026 on 11.10.2024.
-//
-
 #ifndef TP1_FLATFIGURE_H
 #define TP1_FLATFIGURE_H
 
@@ -9,18 +5,24 @@
 
 class FlatFigure : public Figure {
 private:
+    double x;
+    double y;
     double area;
 public:
     FlatFigure();
-    FlatFigure(const std::string& type, double size, double area);
+    FlatFigure(const std::string& type, double x, double y);
     ~FlatFigure();
 
     void draw() const override;
     double getArea() const override;
     double getVolume() const override;
 
-    void setArea(double area);
+    void setX(double x);
+    void setY(double y);
+    void setSize(double x, double y);
 
+    double getX() const;
+    double getY() const;
 };
 
 #endif //TP1_FLATFIGURE_H

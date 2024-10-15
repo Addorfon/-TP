@@ -11,10 +11,13 @@
 class Figure {
 protected:
     std::string type;
+    double x;
+    double y;
+    double z;
     double size;
 public:
     Figure();
-    Figure(const std::string& type, double size);
+    Figure(const std::string& type);
     virtual ~Figure();
 
     std::string getType() const;

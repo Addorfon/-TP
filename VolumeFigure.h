@@ -1,7 +1,3 @@
-//
-// Created by 89026 on 11.10.2024.
-//
-
 #ifndef TP1_VOLUMEFIGURE_H
 #define TP1_VOLUMEFIGURE_H
 
@@ -9,17 +5,25 @@
 
 class VolumeFigure : public Figure {
 private:
+    double x;
+    double y;
+    double z;
     double volume;
 public:
     VolumeFigure();
-    VolumeFigure(const std::string& type, double size, double area);
+    VolumeFigure(const std::string& type, double x, double y, double z);
     ~VolumeFigure();
 
     void draw() const override;
     double getVolume() const override;
-    void setVolume(double area);
-
+    double getArea() const override;
+    void setX(double x);
+    void setY(double y);
+    void setZ(double z);
+    void setSize(double x, double y, double z);
+    double getX() const;
+    double getY() const;
+    double getZ() const;
 };
-
 
 #endif //TP1_VOLUMEFIGURE_H
