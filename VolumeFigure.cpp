@@ -25,6 +25,10 @@ double VolumeFigure::getVolume() const {
     return volume;
 }
 
+double VolumeFigure::getArea() const {
+    return 0; // Volume figures do not have a defined area
+}
+
 void VolumeFigure::setVolume(double volume) {
     this->volume = volume;
 }

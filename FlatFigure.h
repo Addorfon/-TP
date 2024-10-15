@@ -17,6 +17,8 @@ public:
 
     void draw() const override;
     double getArea() const override;
+    double getVolume() const override;
+
     void setArea(double area);
 
 };

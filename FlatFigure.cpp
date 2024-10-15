@@ -25,6 +25,10 @@ double FlatFigure::getArea() const {
     return area;
 }
 
+double FlatFigure::getVolume() const {
+    return 0; // Flat figures have no volume
+}
+
 void FlatFigure::setArea(double area) {
     this->area = area;
 }
