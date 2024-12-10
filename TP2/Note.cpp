@@ -2,25 +2,10 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 Note::Note(){
     std::cout << "Note default constructor called" << std::endl;
-    std::string n, p;
-    std::array<int, 3> h;
-    std::cout << "Введите вашу фамилию и имя: ";
-    std::cin >> n;
-    std::cout << "Введите ваш номер телефона: ";
-    std::cin >> p;
-    std::cout << "Введите год вашего рождения: ";
-    std::cin >> h[2];
-    std::cout << "Введите месяц вашего рождения: ";
-    std::cin >> h[1];
-    std::cout << "Введите день вашего рождения: ";
-    std::cin >> h[0];
-
-    setName(n);
-    setPhone(p);
-    setHD(h);
 };
 
 Note::Note(const std::string name, const std::string phone, std::array<int, 3> hd){
@@ -31,37 +16,52 @@ Note::Note(const std::string name, const std::string phone, std::array<int, 3> h
 };
 
 Note::~Note(){
-     std::cout << "Note destructor called" << std::endl;
+    std::cout << "Note destructor called" << std::endl;
 }
 
-std::string Note::getName(){
+std::string Note::getName()  {
     return this->name;
 }
 
-std::string Note::getPhone(){
+std::string Note::getPhone()  {
     return this->phone;
 }
 
-std::array<int, 3> Note::getHD(){
+std::array<int, 3> Note::getHD()  {
     return this->hd;
 }
 
-void Note::setName(const std::string name) {
+void Note::setName(std::string name) {
     this->name = name;
 }
 
-void Note::setPhone(const std::string phone) {
+void Note::setPhone(std::string phone) {
     this->phone = phone;
 }
 
-void Note::setHD(std::array<int, 3> hd){
+void Note::setHD(std::array<int, 3> hd) {
     this->hd = hd;
 }
 
 std::istream& operator>>(std::istream& is, Note& other){
     std::string name, phone;
     std::array<int, 3> hd;
-    is >> name >> phone >> hd[0] >> hd[1] >> hd[2];
+
+    is.ignore();
+
+    std::cout << "Enter name and surname: ";
+    std::getline(is, name);
+    std::cout << "Enter phone: ";
+    std::getline(is, phone);
+    std::cout << "Enter birthday (DD.MM.YYYY): ";
+    std::string birthday;
+    std::getline(is, birthday);
+
+    // Парсинг даты рождения
+    std::istringstream iss(birthday);
+    char dot;
+    iss >> hd[0] >> dot >> hd[1] >> dot >> hd[2];
+
     other.setName(name);
     other.setPhone(phone);
     other.setHD(hd);

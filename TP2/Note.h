@@ -23,9 +23,11 @@ public:
     void setPhone(std::string phone);
     void setHD(std::array<int, 3> hd);
 
+    friend std::ostream& operator<<(std::ostream& os, Note& other);
+    friend std::istream& operator>>(std::istream& is, Note& other);
+
 };
 
-std::ostream& operator<<(std::ostream& os, const Note& other); 
-std::istream& operator>>(std::istream& is, Note& other); 
+
 
 #endif

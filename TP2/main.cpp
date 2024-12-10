@@ -44,39 +44,19 @@ int main()
     vector<Note> Notes;
     int choose;
     int count = 0;
-
+    Note note;
     while (1){
         menu();
         cout << "Enter your choose: ";
         cin >> choose;
         if (choose == 1){
-            if (count == 0){
-                cout << "Enter the number of students, which you want to add: ";
-                cin >> count;
-                for (int i = 0; i < count; i++){
-                    Note note;
-                    cout << "Enter name, phone and birthday (like 01.01.2001) for note " << i + 1 << ": ";
-                    cin >> note;
-                    Notes.push_back(note);
-                }
-            }
-            else if (count > 0){
-                int tmp_count;
-                cout << "Enter the number of students, which you want to add: ";
-                cin >> tmp_count;
-                count += tmp_count;
-                for (int i = 0; i < tmp_count; i++){
-                    Note note;
-                    cout << "Enter name, phone and birthday (like 01.01.2001) for note " << count + 2 << ": ";
-                    cin >> note;
-                    Notes.push_back(note);
-                }
-            }
-            
+            cout << "Enter name, phone and birthday (like 01.01.2001) for note " << Notes.size() + 1 << ": ";
+            cin >> note;
+            Notes.push_back(note);
         }
         else if (choose == 2){
             mySort(Notes);
-            for (int i = 0; i < count; ++i){
+            for (int i = 0; i < Notes.size(); ++i){
                 cout << Notes[i] << endl;
             }
         }   
@@ -84,7 +64,7 @@ int main()
             int month;
             cout << "Enter number of month, which you want to show: ";
             cin >> month;
-            for (int i = 0; i < count; ++i){
+            for (int i = 0; i < Notes.size(); ++i){
                 if (Notes[i].getHD()[1] == month){
                     cout << Notes[i] << endl;
                 }
