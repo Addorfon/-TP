@@ -57,7 +57,6 @@ std::istream& operator>>(std::istream& is, Note& other){
     std::string birthday;
     std::getline(is, birthday);
 
-    // Парсинг даты рождения
     std::istringstream iss(birthday);
     char dot;
     iss >> hd[0] >> dot >> hd[1] >> dot >> hd[2];
