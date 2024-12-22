@@ -15,7 +15,7 @@ void taskMenu(){
 }
 
 void menu2(){
-    cout << "1. Enter our text" << endl;
+    cout << "\n1. Enter our text" << endl;
     cout << "2. Load text from file" << endl;
     cout << "3. Back"<< endl;
 }
